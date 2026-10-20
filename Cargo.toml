@@ -1,0 +1,28 @@
+[package]
+name = "cangu"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+pho = { git = "https://github.com/Mango-Cats/pho", rev = "945a983edcd4456ad2c55c26f65a00d9aac36446" }
+csv = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "1"
+rand = "0.8"
+rayon = "1"
+cmaes = { version = "=0.2.2", default-features = false }
+
+[lib]
+name = "cangu"
+path = "src/lib.rs"
+
+[[example]]
+name = "demo"
+path = "example/demo.rs"
+
+[profile.release]
+debug = false
+
+[profile.test]
+opt-level = 3
